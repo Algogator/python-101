@@ -1,9 +1,12 @@
+# Assignements in Python
 x = 3
 y = x
+# x and y refer to the same object
 print(id(x),id(y))
 y = 2
 print(id(x),id(y))
 #========================================
+# Global vs Local variables
 def print_obj():
     print(eggs)
     # What if I want to change it?
