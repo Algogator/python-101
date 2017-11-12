@@ -78,3 +78,13 @@ for x in a:
 #lists
 
 dir(list) #Gives all operations that can be done on the list
+
+a = [1,2,3,4,5,6,7,8,9,10]
+
+a[0:11] # Slice of entier array
+
+a[0:11:2] #Start from index 0 till index 11 in steps of 2
+
+a[:-1] #Reverse the list
+
+a[::2] #Increments of 2
