@@ -1,6 +1,5 @@
 # Global vs Local variables
 
-
 def print_obj():
     print(eggs)
     # What if I want to change it?
@@ -73,3 +72,42 @@ def func(some_arg,*args, **kwargs):
     print("KWArgs: ", kwargs)
 
 func(1,2,3,anna=1,dana=2)
+
+# Classes
+
+class Mammal:
+    #class attribute​
+    type_of_mamma = 'Human'
+
+    def __init__(self, name, age):
+        self.name = name
+        self.__age = age
+        print("Mammal")
+
+    def __str__(self):
+        return "This works with print"
+
+    def sing(self):
+        return("Lala")
+
+anna = Mammal("Anna", 24)
+print(anna.name)
+# print(anna.__age)
+# print(anna._Mammal__age)
+
+print(anna)
+
+# Multiple Inheritance
+
+class Animal:
+
+    def __init__(self):
+        print("Argh")
+
+
+class Cow(Animal, Mammal):
+
+    def __init__(self):
+        super().__init__()
+
+cow = Cow()
