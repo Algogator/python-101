@@ -1,5 +1,15 @@
-# Global vs Local variables
+import example_package
+#My module
 
+example_package.randomfunction()
+
+import sys
+
+print('\n'.join(sys.path))
+
+# randomfunction2
+
+# Global vs Local variables
 def print_obj():
     print(eggs)
     # What if I want to change it?
@@ -51,6 +61,27 @@ some_dict = {"Anna": 23, "Dana": 21}
 
 another_dict = {(1, 2, 3): "Numbers!"}
 
+#Map
+print(list(map(lambda x:x**x,[1,2,3])))
+
+x = map(lambda x:x**x,[1,2,3])
+
+    #next
+
+for i in x:
+    print(i)
+
+#Filter
+
+for i in filter(lambda x:x % 2,[1,2,3,4,5,6,7,8,9,10]):
+    print(i)
+
+#Reduce
+
+from functools import reduce
+
+print(reduce( lambda x, y: x + y, [1, 2, 3, 4] ))
+
 # args kwargs
 
 
@@ -72,6 +103,7 @@ def func(some_arg,*args, **kwargs):
     print("KWArgs: ", kwargs)
 
 func(1,2,3,anna=1,dana=2)
+
 
 # Classes
 
@@ -101,13 +133,34 @@ print(anna)
 
 class Animal:
 
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         print("Argh")
 
 
 class Cow(Animal, Mammal):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, name):
+        super().__init__(name)
+        self.x = name
+        # Animal.__init__(self)
+        # Animal.name = x
 
-cow = Cow()
+    def __lt__(self, other):
+        if len(self.x) < len(other.x):
+            return True
+        else:
+            False
+
+# class Heifer(Cow):
+#
+#     def __init__(self, name):
+#         Cow.x = name
+
+
+cow = Cow("Molly")
+print(cow.x)
+
+cow2 = Cow("Milicent")
+
+print(cow < cow2)
