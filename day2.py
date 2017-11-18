@@ -1,4 +1,4 @@
-import example_package
+import . example_package
 #My module
 
 example_package.randomfunction()
@@ -6,6 +6,8 @@ example_package.randomfunction()
 import sys
 
 print('\n'.join(sys.path))
+
+#sys.path.append()
 
 # randomfunction2
 
@@ -34,6 +36,14 @@ def func(x):
 a = func(1)
 print(a(2))
 print(a(3))
+
+def func1(some_func, data):
+    print(some_func(data))
+
+def func2(data):
+    return data.lower()
+
+func1(func2)
 
 # Tuples
 
