@@ -118,7 +118,7 @@ func(1,2,3,anna=1,dana=2)
 # Classes
 
 class Mammal:
-    #class attribute​
+    #class attribute​/static variables
     type_of_mamma = 'Human'
 
     def __init__(self, name, age):
